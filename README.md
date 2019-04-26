@@ -38,7 +38,7 @@ Secretome prediction often involves multiple steps.
 + Predicts the sub cellular location of eukaryotes(TargetP), by using get_targetp function.
 + Predicts trans membrane helices(TMHMM) by using get_tmhmm function.
 
-(![motif](https://user-images.githubusercontent.com/43873570/56793098-cbe0d200-6828-11e9-9df9-77b6ea027616.png))
+![motif](https://user-images.githubusercontent.com/43873570/56793098-cbe0d200-6828-11e9-9df9-77b6ea027616.png)
  
  
  **Summary of Functionality**:

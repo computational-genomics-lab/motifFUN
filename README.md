@@ -54,7 +54,7 @@ Secretome prediction often involves multiple steps.
 |  7 |get_targetp()   |To predict subcellular location of eukaryotes      |Path of targetp, organism group, input file|TargetP 1.1|
 |  8 |get_tmhmm()       |To predict transmembrane helices                   |complete Path of tmhmm, Input file| Tmhmm |
 | 9  |hmm.plot()        |The plot shows the bits (amino acid scores) of each amino acid and its position in the HMM profile|motif candidate data frame|No dependencies |
-|10  |summary_motifs()  |To extract all the non-redundant sequences & a summary table with the information about the motifs|motif candidates, motif pattern without range|No dependencies|
+|10  |summary_motifs()  |To extract all the non-redundant sequences & a summary table with the information about the motifs|motif candidates, motif pattern without range, signalp vesrion, input filename used in signalp|No dependencies|
 |    |                |     |  
  
  
@@ -114,7 +114,7 @@ Read instructions and install
 
 <font size="2">tar -zxvf signalp-3.0.Linux.tar.Z</font>
 
-<font size="2">$\color{blue}{\text{cd}}$ signalp-3.0</font>
+ cd signalp-3.0
 
 Edit"General settings" at the top of the signalp file. Set the value of 'SIGNALP' variable to be a path to your signalp-3.0 directory. Other variables usually do not require changes. For more details please check signalp-3.0.readme.
 
@@ -128,7 +128,7 @@ Edit"General settings" at the top of the signalp file. Set the value of 'SIGNALP
 
 <font size="2">tar -zxvf signalp-5.0.Linux.tar.gz</font>
 
-<font size="2">$\color{blue}{\text{cd}}$ signalp-5.0</font>
+ cd signalp-5.0
 
 **3.3.Downloading targetp-1.1**
 

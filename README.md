@@ -1,4 +1,4 @@
-# motifFUN
+## motifFUN
 An R package for searching user defined motif with functional annotation features
 The **motifFUN** package is an R package designed to search for the motifs of interest using user-defined regular expression searches and hidden Markov models (HMM) along with a prediction of some functional criteria such as signal peptides, subcellular location of Eukaryotes and transmembrane helices.
 
@@ -34,9 +34,9 @@ This package searching user-defined motif of interest using a regular expression
 
 Secretome prediction often involves multiple steps. 
 
-+ The motifFUN package starts with the prediction of short **signal peptides(signalP)** at the N-terminal end of a protein.
-+ Predicts the sub cellular location of eukaryotes**(TargetP)**, by using get_targetp function.
-+ Predicts trans membrane helices**(TMHMM)**by using get_tmhmm function.
++ The motifFUN package starts with the prediction of short signal peptides(signalP) at the N-terminal end of a protein.
++ Predicts the sub cellular location of eukaryotes(TargetP), by using get_targetp function.
++ Predicts trans membrane helices(TMHMM) by using get_tmhmm function.
 
 ![alt text](/home/cglab/Downloads/motif.png)
  

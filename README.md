@@ -4,7 +4,7 @@ The **motifFUN** package is an R package designed to search for the motifs of in
 
 Several command line tools and web-interfaces exist to perform predictions of individual motifs and domains (SignalP, TargetP, TMHMM) however the interface that combines the outputs in a single flexible workflow is lacking, So that developed a motifFUN package to fulfill that gap.
 
-#<font size="4">**1.OUTLINE**</font>
+<font size="4">**1.OUTLINE**</font>
 
 The **motifFUN** package provides a platform to search motifs and build automated multi-step secretome prediction pipelines that can be applied to large protein. The features of this package is described below.
 
@@ -35,5 +35,5 @@ This package searching user-defined motif of interest using a regular expression
 Secretome prediction often involves multiple steps. 
 
 + The motifFUN package starts with the prediction of short **signal peptides(signalP)** at the N-terminal end of a protein.
-+ Predicts the sub cellular location of eukaryotes**(TargetP)**, by using get_targetp function.
-+ Predicts trans membrane helices**(TMHMM)**by using get_tmhmm function.
++ Predicts the sub cellular location of eukaryotes (**TargetP**), by using get_targetp function.
++ Predicts **trans membrane helices(TMHMM)** by using get_tmhmm function.

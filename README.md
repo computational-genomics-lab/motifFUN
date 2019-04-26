@@ -1,4 +1,4 @@
-## motifFUN
+## motifFUN : A tool for searching user-defined motif along with functional annotation
 An R package for searching user defined motif with functional annotation features
 The **motifFUN** package is an R package designed to search for the motifs of interest using user-defined regular expression searches and hidden Markov models (HMM) along with a prediction of some functional criteria such as signal peptides, subcellular location of Eukaryotes and transmembrane helices.
 
@@ -142,7 +142,7 @@ Edit"General settings" at the top of the signalp file. Set the value of 'SIGNALP
 
 <font size="2">tar -zxvf targetp-1.1b.Linux.tar.Z</font>
 
-<font size="2">$\color{blue}{\text{cd}}$ targetp-1.1</font>
+cd targetp-1.1
 
 Edit the paragraph labeled "GENERAL SETTINGS, customize" at the top of the targetp file. Set values for 'TARGETP' and 'TMP' variables. Ensure, that the path to targetp does not exceed 60 characters, otherwise targetp-1.1 might fail.
 
@@ -158,7 +158,7 @@ Edit the paragraph labeled "GENERAL SETTINGS, customize" at the top of the targe
 
 <font size="2">tar -zxvf tmhmm-2.0c.Linux.tar.gz</font>
 
-<font size="2">$\color{blue}{\text{cd}}$ tmhmm-2.0c</font>
+ cd tmhmm-2.0c
 
 **3.5.Downloading and installing MAFFT**
 
@@ -347,7 +347,6 @@ For signalp-5.0
 
 If the input fasta files containing more than 300 sequences, get_signalp will automatically switch to parallel mode. It will split the input into smaller chunks and run prediction as a massive parallel process using a specified number of CPUs. If user did not provide signalp path then by default function takes the latest version of signalp-5 path. For signalp-3 version user needs to provide signalp-3 path.
 
-
 ```{r}
 input_file <- "testfile_orf_descard_REGEX.fasta"
 signalp5 <- get_signalp(signalp.path = NULL, signalp.version = 5, input_file = input_file, org.type = "-org euk")
@@ -384,15 +383,6 @@ LOCALIZATION column:
 **4.8.tmhmm**
 
 TMHMM predicts transmembrane α-helices and identifies integral membrane proteins based on HMMs [@Krogh2001a].
-
-<center>
- Transmembrane helical domain
- </center>
-<center>
- ![](/home/cglab/Desktop/praveen/7transmemb.png){width=320px}
-
- </center>
-
 The get_tmhmm function requires to provides a tmhmm path, input fasta file, If user did not provide tmhmm path then by default function will take tmhmm path.
 
 ```{r}
@@ -401,9 +391,7 @@ head(tmhmm)
 ```
 
 + This function generates text file having tmhmm result
-
 + This function returns data frame contains the ID and NUMBER_OF_PREDICTED_TMHS columns
-
 
 **4.9.motif summarys and motif sequences**
 
@@ -414,7 +402,6 @@ motif_summary <- summary_motifs(hmm.result = motif_candidates, reg.pat= pattern,
 head(motif_summary$consensus.sequences, n = 2)
 head(motif_summary$motif.table, n=5)
 ```
-
 
 **4.10.Visuvalizing HMM profile**
 

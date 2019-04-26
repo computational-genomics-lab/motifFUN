@@ -1,0 +1,18 @@
+Package: motifFUN
+Title: Searching user-defined motif along with functional annotation filtering criteria
+Version: 0.0.0.9000
+Authors@R: c(person("Praveen", "B", email = "bairupravi999@gmail.com", role = c("aut", "cre")),
+             person("Ramakrishna", "k",  role = c("ctb")), 
+             person("Devadas", "M",  role = c("ctb")))
+Author: Praveen bairu [aut]
+Description: This package extract ORF from genome fasta file and searches for user defined motif by using regular expression searches and hidden Markov models (HMM), along with predicts the presence of signalpeptide cleavage site, sub cellular localisation of protiens and predicts transmembrane helices,extract protiens with no transmembrane helices.
+Depends: R (>= 3.5.0)
+Imports: seqinr (>= 3.3.6), ggplot2 (>= 2.2.1),reshape2, utils, knitr,
+        rmarkdown, viridis
+Maintainer: Praveen <bairupravi999@gmail.com>
+License: GPL-2 | GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1.9000
+
+

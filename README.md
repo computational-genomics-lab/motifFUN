@@ -4,7 +4,7 @@ The **motifFUN** package is an R package designed to search for the motifs of in
 
 Several command line tools and web-interfaces exist to perform predictions of individual motifs and domains (SignalP, TargetP, TMHMM) however the interface that combines the outputs in a single flexible workflow is lacking, So that developed a motifFUN package to fulfill that gap.
 
-#<font size="4">**1.OUTLINE**</font>
+<font size="4">**1.OUTLINE**</font>
 
 The **motifFUN** package provides a platform to search motifs and build automated multi-step secretome prediction pipelines that can be applied to large protein. The features of this package is described below.
 
@@ -62,7 +62,7 @@ Secretome prediction often involves multiple steps.
 Due to limitations imposed by the external dependencies, some of the motifFUN wrapper(get_signalp, get_targetp, get_tmhmm) functions won't work in Windows or Mac, however, are fully functional on Linux.
 
  
-#<font size="4"> **2.REQUIREMENTS**</font>
+**2.REQUIREMENTS**
 
  R packages:
 
@@ -83,7 +83,7 @@ External Tools:
 |8|[EMBOSS](http://emboss.sourceforge.net/download/#Stable/)<!-- .element: style="text-align:center;" -->|For extraction of six-frame tranlastion of ORF<!-- .element: style="text-align:right;" -->|
 
 
-#<font size="4">**3.EXTERNAL SOFTWARES**</font>
+**3.EXTERNAL SOFTWARES**
 
 The **motifFUN** package uses signalp, targetp, tmhmm for prediction of extracellular proteins that are secreted via classical pathways, getorf for extraction of ORF.
 
@@ -91,7 +91,7 @@ MAFFT and HMMER3 used to perform the hidden Markov model search across the resul
 
 These packages should be installed before running any of the motifFUN functions.
 
-$\color{Maroon}{\text{3.1.Downloading EMBOSS}}$
+**3.1.Downloading EMBOSS**
 
 * EMBOSS getorf program finds and outputs the sequences of open reading frames (ORFs) in one or more nucleotide sequences. 
 
@@ -103,9 +103,9 @@ $\color{Maroon}{\text{3.1.Downloading EMBOSS}}$
 
 Read instructions and install
 
-$\color{Maroon}{\text{3.2.Downloading signalP}}$
+**3.2.Downloading signalP**
 
-#####**3.2.1.signalp-3.0**
+**3.2.1.signalp-3.0**
 
 * This version will run on the most common UNIX platforms.
 
@@ -119,7 +119,7 @@ $\color{Maroon}{\text{3.2.Downloading signalP}}$
 
 Edit"General settings" at the top of the signalp file. Set the value of 'SIGNALP' variable to be a path to your signalp-3.0 directory. Other variables usually do not require changes. For more details please check signalp-3.0.readme.
 
-#####**3.2.2.signalp 5.0**
+**3.2.2.signalp 5.0**
 
 * This version will run on the most common UNIX platforms.
 
@@ -131,9 +131,9 @@ Edit"General settings" at the top of the signalp file. Set the value of 'SIGNALP
 
 <font size="2">$\color{blue}{\text{cd}}$ signalp-5.0</font>
 
-$\color{Maroon}{\text{3.3.Downloading targetp-1.1}}$
+**3.3.Downloading targetp-1.1**
 
-#####**3.3.targetp-1.1**
+**3.3.targetp-1.1**
 
 * This version will run on the most common UNIX platforms.
 
@@ -147,9 +147,9 @@ $\color{Maroon}{\text{3.3.Downloading targetp-1.1}}$
 
 Edit the paragraph labeled "GENERAL SETTINGS, customize" at the top of the targetp file. Set values for 'TARGETP' and 'TMP' variables. Ensure, that the path to targetp does not exceed 60 characters, otherwise targetp-1.1 might fail.
 
-$\color{Maroon}{\text{3.4.Downloading tmhmm,v.2.0}}$
+**3.4.Downloading tmhmm,v.2.0**
 
-#####**3.4.tmhmm,v.2.0**
+**3.4.tmhmm,v.2.0**
 
 * This version will run on the most common UNIX platforms.
 
@@ -161,9 +161,9 @@ $\color{Maroon}{\text{3.4.Downloading tmhmm,v.2.0}}$
 
 <font size="2">$\color{blue}{\text{cd}}$ tmhmm-2.0c</font>
 
-$\color{Maroon}{\text{3.5.Downloading and installing MAFFT}}$
+**3.5.Downloading and installing MAFFT**
 
-#####**3.5.MAFFT**
+**3.5.MAFFT**
 
 MAFFT is a multiple sequence alignment program that uses Fourier-transform algorithms to align multiple sequences[@Katoh2002]. We recommend downloading and installing MAFFT by following the instructions and steps in the [MAFFT installation](https://mafft.cbrc.jp/alignment/software/) web site.
 
@@ -199,9 +199,9 @@ MAFFT comes in two main distributions for windows:
 
 Please, download and install the all-in-one version.
 
-$\color{Maroon}{\text{3.6.Downloading and installing HMMER}}$
+**3.6.Downloading and installing HMMER**
 
-#####**3.6.HMMER**
+**3.6.HMMER**
 
 HMMER is used for searching sequence databases for sequence homologs. It uses hidden Markov models[@Finn2011] (profile HMMs) to search for sequences with hits to similar patterns than the profile. We use three main HMMER tools:
 
@@ -229,9 +229,9 @@ For more information about HMMER go to the HMMER website: http://hmmer.org/
 
 To use the motifFUN package in Windows, the user must download the Windows binaries of HMMER. motifFUN will not work with any other version of HMMER.
 
-#<font size="4">**4.WORK FLOW**</font>
+**4.WORK FLOW**
 
-#####**4.1.Input Data**
+**4.1.Input Data**
 
 The motifFUN package design to predicts sequence motifs for both nucleotide and amino acid sequence by using a user-defined regular expression. This package supports both Gene FASTA and protein FASTA file as input. 
 
@@ -250,7 +250,7 @@ library(ggplot2)
 orf_fasta = system.file("tests","testfile.fasta", package = "motifFUN")
 ```
 
-#####**4.2.ORF extraction**
+**4.2.ORF extraction**
 
 Emboss getorf is a software tool to finds and outputs the sequences of open reading frames (ORFs) in one or more nucleotide sequences. An ORF is a part of the reading frame has the ability to be translated. ORF having the continuous stretch of codons begin with a start codon(AUG) and stop codon(UAA, UAG or UGA). 
 
@@ -263,7 +263,7 @@ Emboss getorf is a software tool to finds and outputs the sequences of open read
 ORF_filename <- get_orf(getorf.path= NULL, input.file= orf_fasta, output.file = NULL)
 ```
 
-#####**4.3.ORF discard**
+**4.3.ORF discard**
 
 Bhattacharjee et al.[@Bhattacharjee2006] noted that P. infestans–candidate effectors that contain at least 100 residues after the predicted SS cleavage site, highlighting the conservation of the RxLR motif.
 
@@ -274,7 +274,7 @@ Bhattacharjee et al.[@Bhattacharjee2006] noted that P. infestans–candidate eff
 ORF_disacrd_filename <- orf_discard(orf_file= ORF_filename, upper.limit= 1800, lower.limit= 100)
 ```
 
-#####**4.4.Motif Pattern Search**
+**4.4.Motif Pattern Search**
 
 motifFUN package has the function pattern.search to perform the search of the motif of interest. 
 
@@ -295,7 +295,7 @@ This function generates one fasta file having motif sequences, We observe that t
 
 This fasta file will become input to signalp, targetp, tmhmm functional programs.
 
-#####**4.5.MAFFT & HMMER Search**
+**4.5.MAFFT & HMMER Search**
 
 To perform the HMM search and obtain all possible motif from a proteome, motifFUN uses the PATT_REG results as a template to create an HMM profile and perform a search across the proteome of interest.  MotifFUN package have the hmm.search function in order to perform this search. The hmm.search function requires a local installation of MAFFT and HMMER in order to perform the searches.
 
@@ -323,7 +323,7 @@ The hmm.search object returns a list of 3 elements:
 
 This function combines and returns  PATT_REG and HMM search resulted in fasta file, User can use this file as input to functional domains or can use PATT_REG resulted fasta file as input to functional domains depends on the user.
 
-#####**4.6.signalp**
+**4.6.signalp**
 
 The signal peptide is a short peptide usually 16-30 amino acids long [@Hemminger1998]present at the N-terminus of the majority of newly synthesized proteins that are bound towards the secretory pathway. These proteins incorporate those that reside either inside certain organelles, secreted from the cell, or inserted into most cellular membranes.
 
@@ -357,7 +357,7 @@ head(signalp5)
 
 This function generates signalp resulted text file and returns summary dataframe.
 
-#####**4.7.targetp**
+**4.7.targetp**
 
 TargetP 1.1 is a software tool to predicts the subcellular location of eukaryotic proteins.TargetP provides a potential cleavage site for sequences predicted to contain a cTP, mTP or SP. The get_targetp function requires to provide a targetp path, organism group, input file.
 
@@ -382,7 +382,7 @@ LOCALIZATION column:
 + _ Any other location;
 + &#42; "don't know"; indicates that cutoff restrictions were set (see instructions) and the winning network output score was below the requested cutoff for that category.
 
-#####**4.8.tmhmm**
+**4.8.tmhmm**
 
 TMHMM predicts transmembrane α-helices and identifies integral membrane proteins based on HMMs [@Krogh2001a].
 
@@ -406,7 +406,7 @@ head(tmhmm)
 + This function returns data frame contains the ID and NUMBER_OF_PREDICTED_TMHS columns
 
 
-#####**4.9.motif summarys and motif sequences**
+**4.9.motif summarys and motif sequences**
 
 The user can extract all of the non-redundant sequences and a summary table with the information about the motifs using the summary_motifs function. This function uses the results from either hmm.search or pattern. search functions to generate a table that includes the name of the candidate motif sequence, the number of motifs of interest per sequence and its location within the sequence. 
 
@@ -417,19 +417,10 @@ head(motif_summary$motif.table, n=5)
 ```
 
 
-#####**4.10.Visuvalizing HMM profile**
+**4.10.Visuvalizing HMM profile**
 
 To determine if the HMM profile includes the motifs of interest, MotifFUN have The function hmm.plot reads the HMM profile (obtained from the hmm.search step) and uses ggplot2 to create a point plot. The plot will illustrate the bits (amino acid scores) of each amino acid used to construct the HMM profile according to its position in the HMM profile.
 
 ```{r, fig.align="center", fig.width=6, fig.height=4, fig.cap="Figure: Sequence logo plot of the motif candidates "}
 hmm.plot(hmm_data = motif_candidates$HMM_Table)
 ```
-
-**sessioninfo**
-```{r}
-sessionInfo()
-```
-
-
-**References**
-

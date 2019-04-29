@@ -1,5 +1,6 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg)](https://cran.r-project.org/)
+[![Linux Build Status](https://travis-ci.org/gogleva/SecretSanta.svg?branch=master)](https://travishttps://github.com/computational-genomics-lab)
 ## motifFUN : A tool for searching user-defined motif along with functional annotation
 An R package for searching user defined motif with functional annotation features
 The **motifFUN** package is an R package designed to search for the motifs of interest using user-defined regular expression searches and hidden Markov models (HMM) along with a prediction of some functional criteria such as signal peptides, subcellular location of Eukaryotes and transmembrane helices.

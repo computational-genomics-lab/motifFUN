@@ -136,7 +136,7 @@ parse_file <- function(path_in =  NULL, path_out = NULL, num_seq = NULL, trim = 
     return(file_list)
   }
 
- }
+}
 
 
 

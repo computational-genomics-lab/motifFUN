@@ -63,7 +63,16 @@ Secretome prediction often involves multiple steps.
  
 Due to limitations imposed by the external dependencies, some of the motifFUN wrapper(get_signalp, get_targetp, get_tmhmm) functions won't work in Windows or Mac, however, are fully functional on Linux.
 
- 
+**Installation motifFUN**
+
+To install **motifFUN** package:
+
+``` r
+library("devtools")
+install_github("computational-genomics-lab/motifFUN")
+library("motifFUN")
+```
+
 **2.REQUIREMENTS**
 
  R packages:
@@ -413,3 +422,7 @@ To determine if the HMM profile includes the motifs of interest, MotifFUN have T
 ```{r, fig.align="center", fig.width=6, fig.height=4, fig.cap="Figure: Sequence logo plot of the motif candidates "}
 hmm.plot(hmm_data = motif_candidates$HMM_Table)
 ```
+### Reporting bugs
+
+please raise an issue (preferred option) or email <bairupravi999@gmail.com> about bugs and strange things.
+

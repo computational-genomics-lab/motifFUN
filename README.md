@@ -424,5 +424,5 @@ hmm.plot(hmm_data = motif_candidates$HMM_Table)
 ```
 ### Reporting bugs
 
-please raise an issue (preferred option) or email <bairupravi999@gmail.com> about bugs and strange things.
+Please raise an issue (preferred option) or email <bairupravi999@gmail.com> about bugs and strange things.
 

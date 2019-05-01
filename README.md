@@ -17,7 +17,7 @@ install_github("computational-genomics-lab/motifFUN")
 library("motifFUN")
 ```
 
-### 1. OUTLINE
+## 1. OUTLINE
 
 The **motifFUN** package provides a platform to search motifs and build automated multi-step secretome prediction pipelines that can be applied to large protein. The features of this package is described below.
 
@@ -73,7 +73,7 @@ Secretome prediction often involves multiple steps.
  
 Due to limitations imposed by the external dependencies, some of the motifFUN wrapper(get_signalp, get_targetp, get_tmhmm) functions won't work in Windows or Mac, however, are fully functional on Linux.
 
-### 2. REQUIREMENTS
+## 2. REQUIREMENTS
 
  R packages:
 
@@ -94,7 +94,7 @@ External Tools:
 |8|[EMBOSS](http://emboss.sourceforge.net/download/#Stable/)<!-- .element: style="text-align:center;" -->|For extraction of six-frame tranlastion of ORF<!-- .element: style="text-align:right;" -->|
 
 
-### 3. EXTERNAL SOFTWARES
+## 3. EXTERNAL SOFTWARES
 
 The **motifFUN** package uses signalp, targetp, tmhmm for prediction of extracellular proteins that are secreted via classical pathways, getorf for extraction of ORF.
 
@@ -240,7 +240,7 @@ For more information about HMMER go to the HMMER website: http://hmmer.org/
 
 To use the motifFUN package in Windows, the user must download the Windows binaries of HMMER. motifFUN will not work with any other version of HMMER.
 
-### 4.WORK FLOW
+## 4.WORK FLOW
 
 **4.1.Input Data**
 

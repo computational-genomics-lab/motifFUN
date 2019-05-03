@@ -19,12 +19,12 @@ library("motifFUN")
 
 ## 1. OUTLINE
 
-The **motifFUN** package provides a platform to search motifs and build automated multi-step secretome prediction pipelines that can be applied to large protein. The features of this package is described below.
+The **motifFUN** package provides a platform to search motifs and build automated multi-step secretome prediction pipelines that can be applied to largescale protein datasets. The features of this package is described as below.
 
          
 **ORF extraction** 
 
-In this package get_orf function extract six-frame translation of all ORF(open reading frame) in the genome sequence, To perform this we should recommend installing EMBOSS getorf.
+In this package get_orf function extracts six-frame translation of all ORF(open reading frame) of the input nucleotide sequence fasta file. In order to run this, we must have EMBOSS program installed in the client machine that has the getorf function.
 
 **Pattern Search**
 

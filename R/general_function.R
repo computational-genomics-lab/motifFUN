@@ -542,7 +542,7 @@ run_mafft <- function(mafft_path = NULL, num_threads = NULL, file_name = NULL, m
   if (file_length < 1000){
     mafft.command <- c(mafft_path, "--legacygappenalty", "--genafpair", "--maxiterate", "1000", "--thread",num_threads, "--quiet", file_name)
   } else {
-    mafft.command <- c(mafft_path, "--parttree", "--thread", num_threads, file_name)
+    mafft.command <- c(mafft_path, "--legacygappenalty", "--parttree", "--thread", num_threads, file_name)
   }
   system2(mafft.command, stdout = mafft.out_file)
   return(mafft.out_file)

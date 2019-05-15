@@ -1,10 +1,10 @@
 #' For checking programe existance and set default path
 #'
-#' This function check the program and file paths.
+#' This function check the programe and file paths.
 #'
 #' @param programe parameter for programe name.
 #' @param path for path of the programe.
-#' @param error If \code{TRUE}, throw an error if programs is not installed.
+#' @param error If \code{TRUE}, throw an error if programes is not installed.
 #' @param verbose If \code{TRUE}, print progress reports.
 #'
 #' @export
@@ -111,9 +111,9 @@ check_signalp_version <- function(path = NULL){
 }
 
 
-#' For check signalp program and version match
+#' For check signalp programe and version match
 #'
-#' This function check signalp program and version match
+#' This function check signalp programe and version match
 #'.
 #' @param program_version for version of the programe.
 #' @param input_version Provided input version by user
@@ -126,10 +126,10 @@ check_signalp_version <- function(path = NULL){
 #'check_signalp_version_match(program_version=NULL, input_version= NULL)
 #'
 
-### check signalp program and version match
+### check signalp programe and version match
 check_signalp_version_match <- function(program_version=NULL, input_version= NULL){
   if (program_version != input_version){
-    stop('SiganlP program path and input signalp version path is not matching', call. = FALSE)
+    stop('SiganlP programe path and input signalp version path is not matching', call. = FALSE)
   }
   return(TRUE)
 }
@@ -348,14 +348,14 @@ prepare_inputdata <- function(file_input = NULL, dir_name = NULL){
 
 #' FOR running targetp
 #'
-#' This function is used forrun targetp
+#' This function is used for run targetp
 #'
 #' @param programe_path Programe complete path
 #' @param input_file.list Input filenames
 #' @param org.group Organism grop name
-#' @param output output filenam
+#' @param output output filename
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'
 #'  @examples
@@ -379,7 +379,7 @@ run_targetp <- function(programe_path =NULL, input_file.list = NULL, org.group =
 
 #' Dataframe targetp
 #'
-#' This function is used for producing Dataframe targetpp
+#' This function is used for producing Dataframe targetp
 #'
 #' @param targetp_outfile Resulted targetp output filename
 #' @param organism organism name (Plant or nonplant)
@@ -441,7 +441,7 @@ targetp_summary <- function(targetp_outfile = NULL, organism = NULL, error = TRU
 #' @param output output filename
 #'
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'
 #'  @examples
@@ -470,7 +470,7 @@ run_tmhmm <- function(tmhmm.path = NULL, input_file.list = NULL, output = NULL) 
 #'
 #' @param tmhmm_outfile Resulted tmhmm output filename
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'
 #'  @examples
@@ -499,7 +499,7 @@ tmhmm_summary <- function(tmhmm_outfile = NULL) {
 #' @param mafft.path complete path of MAFFT
 #' @param num.threads Number of threads to be used by MAFFT.
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'
 #'  @examples
@@ -530,14 +530,14 @@ get_mafft <- function(alignment.file = NULL, sequences = NULL, mafft.path = NULL
 #' @param file_name PATT_REG sequence
 #' @param mafft.out_file MAFFT ouputput filename
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'
 #'  @examples
 #' run_mafft(mafft_path = NULL, num_threads = NULL, file_name = NULL, mafft.out_file = NULL)
 #'
 run_mafft <- function(mafft_path = NULL, num_threads = NULL, file_name = NULL, mafft.out_file = NULL){
-  file_read <- read.fasta(file_name)
+  file_read <- seqinr::read.fasta(file_name)
   file_length <- length(file_read)
   if (file_length < 1000){
     mafft.command <- c(mafft_path, "--legacygappenalty", "--genafpair", "--maxiterate", "1000", "--thread",num_threads, "--quiet", file_name)
@@ -560,7 +560,7 @@ run_mafft <- function(mafft_path = NULL, num_threads = NULL, file_name = NULL, m
 #' @param mafft_out MAFFT alignment output file name
 #'
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'  @examples
 #' hmm_build(hmm_path = NULL, seed = NULL,  mafft_out = NULL)
@@ -582,7 +582,7 @@ hmm_build <- function(hmm_path = NULL, seed = NULL,  mafft_out = NULL){
 #' @param path_hmm  complete path of HMMER
 #'
 #' @export
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #'  @examples
 #' hmm_press <- function(path_hmm = NULL)
@@ -665,7 +665,7 @@ fasta_to_stockholm <- function(fasta.file){
 #' @param seed The seed to used with HMMER commands. Set this to get the same output each time.
 #' @param mafft.out.name mafft alignment filename.
 #'
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #' @keywords general
 #'
@@ -691,7 +691,7 @@ hmmbuild <- function(hmm_path = NULL, seed = NULL, mafft.out.name = NULL){
 #'
 #' @param hmmpress_path  complete path of HMMER
 #'
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #' @keywords general
 #'
@@ -717,7 +717,7 @@ hmmpress <- function(hmmpress_path = NULL) {
 #' @param hmm.tresh Set the bit score cutoff for the per-sequence ranked hit list to a real number. (Default = 0)
 #' @param original.seq The absolute path for the original six-frame translation FASTA file
 #'
-#' @return Resulted output file name
+#' @return Resulted output filename
 #'
 #' @keywords general
 #'
@@ -746,7 +746,7 @@ hmmsearch <- function(hmmsearch_path = NULL, seed = NULL,hmm.tresh = NULL, origi
 #'
 #' @param original_seq The absolute path for the original six-frame translation FASTA file
 #' @param hmmsearch.out hmmsearch output file
-#' @param hmmbuild.out hmmbuild output file name
+#' @param hmmbuild.out hmmbuild output filename
 #' @param regex.seq pattern search function returns the sequence stored in PATT_REG variable.
 #' @param save.alignment alignment file
 #'
@@ -800,7 +800,7 @@ reading_hmm.results <- function(original_seq = NULL, hmmsearch.out = NULL, hmmbu
 #' @param original.seq The absolute path for the original six-frame translation FASTA file.
 #'
 #' @export
-#' @return returns ouput fasta file name
+#' @return returns ouput fasta filename
 #'
 #'  @examples
 #' HMM_fasta(total_seq = NULL, original.seq = NULL)

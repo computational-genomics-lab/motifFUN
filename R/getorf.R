@@ -5,7 +5,7 @@
 #' @param getorf.path  Path of getorf excutable file path,path.getorf excutable file will provide along with the package,if path is null then this function will take default path from syste path.
 #' @param input.file  inputfile should have DNA query sequence filename.
 #' @param output.file name of output filename.
-#' @param error If \code{TRUE}, throw an error if programs is not installed.
+#' @param error If \code{TRUE}, throw an error if programes is not installed.
 #' @param verbose If \code{TRUE}, print progress reports.
 #'
 #' @export

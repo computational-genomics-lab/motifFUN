@@ -258,7 +258,8 @@ INPUT
 library(motifFUN)
 library(seqinr)
 library(ggplot2)
-orf_fasta = system.file("tests","testfile.fasta", package = "motifFUN")
+#orf_fasta = system.file("tests","testfile.fasta", package = "motifFUN")
+orf_fasta = "/home/cglab/motifFUN/tests/testfile.fasta"
 ```
 
 **4.2.ORF extraction**
